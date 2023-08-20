@@ -39,9 +39,9 @@ public class Test {
 			switch(choice)
 			{
 				case 1:
-					
 					try {
 						bank.createAccount();
+						
 					}
 					catch(AccountNumberInvalidException a)
 					{
@@ -73,29 +73,30 @@ public class Test {
 						System.out.println(be.getMessage());
 						bank.createAccount();
 					}
+					catch (Exception e) {
+						e.printStackTrace();
+					}
+					break;
+					
+				case 2: bank.displayAllDetails();
 				break;
 		
-				case 2:bank.displayAllDetails();
+				case 3: bank.depositeMoney();
 				break;
-		
-				case 3:bank.depositeMoney();
-				break;
-		
+				
 				case 4:bank.withdrawal();
 				break;
-		
-				case 5:bank.balanceCheck();
+				
+				case 5: bank.balanceCheck();
 				break;
 				
 				case 6:System.exit(0);
 				break;
-		
-				default : System.out.println("Enter valid Choice!!!");
-			}
-			
-			System.out.print("\nDo you want to continue ? ");
-			ch= sc.next();
-		}while(ch.equalsIgnoreCase("Y") || ch.equalsIgnoreCase("y"));
-		
+				
+				default :System.out.println("Wrong choice....");
+				}
+			System.out.print("\nDo u want to continue with another choice ?");
+			ch=sc.next();
+		}while(ch.equalsIgnoreCase("Yes") || ch.equalsIgnoreCase("yes"));
 	}
 }
